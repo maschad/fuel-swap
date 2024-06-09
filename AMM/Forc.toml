@@ -1,0 +1,8 @@
+[workspace]
+members = [
+  "./AMM-contract",
+  "./exchange-contract",
+  "./test-utils/test-artifacts/malicious-implementation",
+  "./atomic-add-liquidity",
+  "./test-token"
+]

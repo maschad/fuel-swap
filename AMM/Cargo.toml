@@ -1,0 +1,11 @@
+[workspace]
+resolver = "2"
+members = [
+    "./AMM-contract",
+    "./exchange-contract",
+    "./atomic-add-liquidity",
+    "./swap-exact-input",
+    "./swap-exact-output",
+    "./test-token",
+    "./test-utils",
+]

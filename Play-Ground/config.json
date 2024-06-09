@@ -1,0 +1,19 @@
+{
+    "tokenContract": "0xf1ea11be20f8d6d7a30ff69f21bffc1a95910e0459b03fbdd5c5070f4f48f82d",
+    "tokens": [
+        {
+            "assetId": "0x580085ecb00ce878a662d19582a5d40cbe4417184f2514ed427c937ce4f50781",
+            "subId": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "name": "test USD",
+            "symbol": "tUSD",
+            "decimals": 6
+        },
+        {
+            "assetId": "0x299ea939953a56ab887dc663140b7b65da4be47851eb5f216d5201290cdae30d",
+            "subId": "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "name": "test BTC",
+            "symbol": "tBTC",
+            "decimals": 10
+        }
+    ]
+}
