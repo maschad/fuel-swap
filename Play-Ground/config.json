@@ -1,0 +1,28 @@
+{
+    "tokenContract": "0xf1ea11be20f8d6d7a30ff69f21bffc1a95910e0459b03fbdd5c5070f4f48f82d",
+    "tokens": [
+        {
+            "assetId": "0x580085ecb00ce878a662d19582a5d40cbe4417184f2514ed427c937ce4f50781",
+            "subId": "0x0000000000000000000000000000000000000000000000000000000000000000",
+            "name": "test USD",
+            "symbol": "tUSD",
+            "decimals": 6
+        },
+        {
+            "assetId": "0x299ea939953a56ab887dc663140b7b65da4be47851eb5f216d5201290cdae30d",
+            "subId": "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "name": "test BTC",
+            "symbol": "tBTC",
+            "decimals": 10
+        }
+    ],
+    "ammContract": "0x4c2fe6558b9d8daf8293909ac26ac6807959844b53186ce316562d6cc3328011",
+    "pools": {
+        "0x580085ecb00ce878a662d19582a5d40cbe4417184f2514ed427c937ce4f50781": {
+            "0x299ea939953a56ab887dc663140b7b65da4be47851eb5f216d5201290cdae30d": "0x841d33b5dd78e532fa66a6ca5fec0597b23c96a98fd3bbb4087daa6285b93434"
+        },
+        "0x299ea939953a56ab887dc663140b7b65da4be47851eb5f216d5201290cdae30d": {
+            "0x580085ecb00ce878a662d19582a5d40cbe4417184f2514ed427c937ce4f50781": "0x841d33b5dd78e532fa66a6ca5fec0597b23c96a98fd3bbb4087daa6285b93434"
+        }
+    }
+}

@@ -1,0 +1,30 @@
+[[package]]
+name = "core"
+source = "path+from-root-DC7CD5A2625E95E8"
+
+[[package]]
+name = "native-asset-contract"
+source = "member"
+dependencies = [
+    "standards",
+    "std",
+    "sway_libs",
+]
+
+[[package]]
+name = "standards"
+source = "git+https://github.com/FuelLabs/sway-standards?tag=v0.4.3#6f63eb7dff2458a7d976184e565b5cbf26f61da2"
+dependencies = ["std"]
+
+[[package]]
+name = "std"
+source = "git+https://github.com/fuellabs/sway?rev#0e567287b4e0abe5394fb5f5f4e9d4a8528a6e13"
+dependencies = ["core"]
+
+[[package]]
+name = "sway_libs"
+source = "git+https://github.com/FuelLabs/sway-libs?tag=v0.21.0#6a227ed34c86fe1ebd334dbdfeccf66c43e3915b"
+dependencies = [
+    "standards",
+    "std",
+]
