@@ -151,85 +151,85 @@ const _abi = {
         {
           "name": "doc-comment",
           "arguments": [
-            " Deposits pool assets and adds liquidity to an AMM exchange contract.\r"
+            " Deposits pool assets and adds liquidity to an AMM exchange contract."
           ]
         },
         {
           "name": "doc-comment",
           "arguments": [
-            "\r"
+            ""
           ]
         },
         {
           "name": "doc-comment",
           "arguments": [
-            " # Arguments\r"
+            " # Arguments"
           ]
         },
         {
           "name": "doc-comment",
           "arguments": [
-            "\r"
+            ""
           ]
         },
         {
           "name": "doc-comment",
           "arguments": [
-            " * `exchange_contract_id`: [ContractId] - The contract id of the exchange.\r"
+            " * `exchange_contract_id`: [ContractId] - The contract id of the exchange."
           ]
         },
         {
           "name": "doc-comment",
           "arguments": [
-            " * `liquidity_parameters`: [LiquidityParameters] - Exchange liquidity for a specific asset pair.\r"
+            " * `liquidity_parameters`: [LiquidityParameters] - Exchange liquidity for a specific asset pair."
           ]
         },
         {
           "name": "doc-comment",
           "arguments": [
-            "\r"
+            ""
           ]
         },
         {
           "name": "doc-comment",
           "arguments": [
-            " # Returns\r"
+            " # Returns"
           ]
         },
         {
           "name": "doc-comment",
           "arguments": [
-            "\r"
+            ""
           ]
         },
         {
           "name": "doc-comment",
           "arguments": [
-            " * The amount of liquidity assets minted.\r"
+            " * The amount of liquidity assets minted."
           ]
         },
         {
           "name": "doc-comment",
           "arguments": [
-            "\r"
+            ""
           ]
         },
         {
           "name": "doc-comment",
           "arguments": [
-            " # Reverts\r"
+            " # Reverts"
           ]
         },
         {
           "name": "doc-comment",
           "arguments": [
-            "\r"
+            ""
           ]
         },
         {
           "name": "doc-comment",
           "arguments": [
-            " * When `liquidity_parameters.liquidity` is not greater than zero.\r"
+            " * When `liquidity_parameters.liquidity` is not greater than zero."
           ]
         }
       ]

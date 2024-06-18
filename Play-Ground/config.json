@@ -15,5 +15,14 @@
             "symbol": "tBTC",
             "decimals": 10
         }
-    ]
+    ],
+    "ammContract": "0x3ba34da8fc9f4826db5e23fafdd0437f4018f709df8940ad6932875dfd00484a",
+    "pools": {
+        "0x580085ecb00ce878a662d19582a5d40cbe4417184f2514ed427c937ce4f50781": {
+            "0x299ea939953a56ab887dc663140b7b65da4be47851eb5f216d5201290cdae30d": "0xdacfdefd2e9e34a9b4f98744268eb61b9bf10983a8054da6bbe49a4d1689828c"
+        },
+        "0x299ea939953a56ab887dc663140b7b65da4be47851eb5f216d5201290cdae30d": {
+            "0x580085ecb00ce878a662d19582a5d40cbe4417184f2514ed427c937ce4f50781": "0xdacfdefd2e9e34a9b4f98744268eb61b9bf10983a8054da6bbe49a4d1689828c"
+        }
+    }
 }
