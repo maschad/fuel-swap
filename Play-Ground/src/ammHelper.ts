@@ -1,8 +1,8 @@
-import {Account, arrayify, AssetId, BytesLike, chunkAndPadBytes, ContractFactory, hexlify} from "fuels";
-import {calcRoot} from "@fuel-ts/merkle";
-import {AMMContractAbi, AMMContractAbi__factory, ExchangeContractAbi, ExchangeContractAbi__factory} from "./sway-api";
-import {join} from "path";
-import {readFileSync} from "fs";
+import { Account, arrayify, AssetId, BytesLike, chunkAndPadBytes, ContractFactory, hexlify } from "fuels";
+import { calcRoot } from "@fuel-ts/merkle";
+import { AMMContractAbi, AMMContractAbi__factory, ExchangeContractAbi, ExchangeContractAbi__factory } from "./sway-api";
+import { join } from "path";
+import { readFileSync } from "fs";
 
 export const getContractRoot = (bytecode: BytesLike): string => {
     const chunkSize = 16 * 1024;
@@ -30,15 +30,17 @@ export const initialize_amm_contract = async (amm_contract: AMMContractAbi) => {
     let root = getContractRoot(bytecode)
     console.log('bytecodeRoot', root)
 
-    await amm_contract.functions.initialize({bits: root}).call()
+    await amm_contract.functions.initialize({ bits: root }).call()
 }
 
 export const deploy_pool_contract = async (wallet: Account, assetIdA: string, assetIdB: string) => {
     const bytecodeDir = join(__dirname, '../../AMM/exchange-contract/out/debug/exchange-contract.bin')
+    const storageSlotsDir = join(__dirname, '../../AMM/exchange-contract/out/debug/exchange-contract-storage_slots.json')
     console.log(bytecodeDir)
     const bytecode = readFileSync(bytecodeDir)
+    const storageSlots = JSON.parse(readFileSync(storageSlotsDir, 'utf-8'))
     const factory = new ContractFactory(bytecode, ExchangeContractAbi__factory.abi, wallet)
-    let contractAbi = await factory.deployContract()
+    let contractAbi = await factory.deployContract({ storageSlots })
 
     console.log(contractAbi.id.toB256())
 

@@ -1,5 +1,5 @@
-import {AMMContractAbi__factory, ExchangeContractAbi__factory, NativeAssetContractAbi__factory} from "./sway-api"
-import {config} from "dotenv";
+import { AMMContractAbi__factory, ExchangeContractAbi__factory, NativeAssetContractAbi__factory } from "./sway-api"
+import { config } from "dotenv";
 import {
     bn,
     BN,
@@ -13,7 +13,7 @@ import {
     isPublicKey,
     toBech32, AbstractAddress
 } from "fuels";
-config({path: ".env"});
+config({ path: ".env" });
 import {
     deploy_token_contract,
     get_asset_id_by_contract_id,
@@ -21,13 +21,14 @@ import {
     set_token_metadata,
     show_token_metadata
 } from "./tokenHelper";
-import {loadConfig, saveConfig} from "./config";
-import {deploy_amm_contract, deploy_pool_contract, initialize_amm_contract} from "./ammHelper";
+import { loadConfig, saveConfig } from "./config";
+import { deploy_amm_contract, deploy_pool_contract, initialize_amm_contract } from "./ammHelper";
 
 const args = require('minimist')(process.argv.slice(2), {
     string: ['task', 'to'],
     boolean: ['loop'],
-    number: ['amount']})
+    number: ['amount']
+})
 
 const CONFIG_PATH = 'config.json'
 const USD_ASSET_ID = bn(0).toHex(32)
@@ -138,7 +139,7 @@ export default async function main() {
         }
 
         let poolContract = ExchangeContractAbi__factory.connect(config.pools[assetId1][assetId2], wallet)
-        await poolContract.functions.constructor({bits: assetId1}, {bits: assetId2}).call()
+        await poolContract.functions.constructor({ bits: assetId1 }, { bits: assetId2 }).call()
         console.log('init pool done')
     }
 
@@ -219,7 +220,7 @@ const transferToken = async (config: any, wallet: Account, subId: string, amount
     let toAddress = Address.fromAddressOrString(to)
     let tokenContract = NativeAssetContractAbi__factory.connect(config.tokenContract, wallet)
     let assetId = getMintedAssetId(config.tokenContract, subId)
-    let {value: decimals} = await tokenContract.functions.decimals({bits: assetId}).simulate()
+    let { value: decimals } = await tokenContract.functions.decimals({ bits: assetId }).simulate()
     let balance = await wallet.getBalance(assetId)
     let amountSend = parseUnits(amount.toString(), decimals)
     console.log('balance', balance.toString(), 'amount', amountSend.toString())
@@ -240,7 +241,7 @@ const mintToken = async (config: any, wallet: Account, subId: string, amount: BN
     }
     to = to ?? wallet
     let tokenContract = NativeAssetContractAbi__factory.connect(config.tokenContract, wallet)
-    let result = await tokenContract.functions.mint({Address: {bits: to.address.toB256()}},
+    let result = await tokenContract.functions.mint({ Address: { bits: to.address.toB256() } },
         subId,
         amount).call()
     console.log(result.transactionResult.mintedAssets[0])
